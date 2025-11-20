@@ -36,6 +36,17 @@
 % Make Pagebreak if you want.
 % \pagebreak
 
+\section{Python}
+\Algorithm{정렬 비교 함수 구현}{첫 번째가 두 번째보다 작으면(less-than) 음수 값(유지), 같으면 0, 크면(greater-than) 양수 값(교체)}{}{py}{code/Python/Sorting.py}{}
+\Algorithm{itertools}{}{}{py}{code/Python/itertools.py}{}
+
+\section{STL}
+\Algorithm{set}{}{}{cpp}{code/STL/set.cpp}{}
+\Algorithm{map}{}{}{cpp}{code/STL/map.cpp}{}
+\Algorithm{priority\_queue}{}{}{cpp}{code/STL/priority_queue.cpp}{}
+\Algorithm{bitset}{낭비되는 7bit를 없애기 위해서 0, 1을 하나 당 1bit에 저장하는 자료형}{}{cpp}{code/STL/bitset.cpp}{}
+\Algorithm{permutation}{}{}{cpp}{code/STL/permutation.cpp}{}
+
 \section{정렬/이분 탐색 관련}
 
 \Algorithm{정렬 비교 함수 구현}{}{}{cpp}{code/Sorting/Compare.cpp}{JusticeHui}
@@ -44,6 +55,11 @@
 
 
 \section{자료구조}
+
+\Algorithm{PBDS}
+{order\_of\_key(NUM) : ordered\_set 에서 NUM 보다 작은(미만의) 원소의 개수를 반환한다.\\
+find\_by\_order(K) : ordered\_set 에서 (K+1)번째 원소가 있는 iterator 을 반환한다. (K가 0이면 1번째)}{}
+{c}{code/DataStructure/pbds.cpp}{}
 
 \TeamnoteImport{Erasable Priority Queue}{code/DataStructure/ErasablePQ.cpp}
 
@@ -117,10 +133,11 @@
 {cpp}{code/DP/FastKnapsack.cpp}
 {kactl}
 
-\Algorithm{DP Optimization}
+\Algorithm{DP Optimization, Knuth Optimization}
 {}{}
 {cpp}{code/DP/DP-Optimize.cpp}
 {JusticeHui}
+\inputminted[]{cpp}{code/DP/Knuth.cpp} % https://blog.myungwoo.kr/98
 
 \Algorithm{Monotone Queue Optimization}
 {}{}
@@ -144,10 +161,11 @@
 \Algorithm{최단 거리 - Dijkstra}{}{$O(E\log E)$}{cpp}{code/Graph1/Dijkstra.cpp}{JusticeHui}
 \Algorithm{최단 거리 - Bellman Ford}{}{$O(VE)$}{cpp}{code/Graph1/Bellman.cpp}{JusticeHui}
 
-\Algorithm{유니온 파인드}
-{}{$O(log N)$}
-{py}{code/Graph1/dsu.py}
-{}
+\Algorithm{유니온 파인드 + 최소 신장 트리(Kruskal)}
+{}{UF: 연산마다 $O(log N)$, MST: $O(E \log E)$}
+{cpp}{code/Graph1/Kruskal.cpp}
+{JusticeHui}
+\inputminted[]{py}{code/Graph1/dsu.py}
 
 \Algorithm{SCC - Kosaraju}
 {}{$O(V+E)$}
@@ -275,6 +293,14 @@
 \Algorithm{Partition Number}
 {}{$O(N\sqrt N)$}{cpp}{code/Math/PartitionNumber.cpp}{Aeren}
 
+\Algorithm{De Bruijn Sequence}
+{}{}
+{cpp}{code/Math/DeBruijnSequence.cpp}
+{DeobureoMinkyuParty}
+
+\Algorithm{지그재그 순열의 개수 구하기}
+{지그재그 순열: $a_1<a_2>a_3<a_4>...$ 또는 $a_1>a_2<a_3>a_4<...$}{}{py}{code/Math/ZigzagPermutaion.py}{}
+
 %\TeamnoteImport{Primitive Root, Discrete Log/Sqrt}{code/Math/DiscreteLogSqrt.cpp}
 
 %\Algorithm{Power Tower}{}{}{cpp}{code/Math/PowerTower.cpp}{}
@@ -290,6 +316,12 @@
 %\Algorithm{Matroid Intersection}{}{}{cpp}{code/Math/MatroidIntersection.cpp}{Aeren}
 
 \section{문자열}
+
+\Algorithm{정규 표현식}
+{}{}
+{cpp}{code/String/regex.cpp}
+{jinhan814}
+\input{code/String/regex}
 
 \Algorithm{문자열 해싱}
 {}{build: $O(N)$, get: $O(1)$}
