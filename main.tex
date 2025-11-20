@@ -140,7 +140,7 @@ find\_by\_order(K) : ordered\_set 에서 (K+1)번째 원소가 있는 iterator �
 \inputminted[]{cpp}{code/DP/Knuth.cpp} % https://blog.myungwoo.kr/98
 
 \Algorithm{Monotone Queue Optimization}
-{}{}
+{}{$O(N\log N)$}
 {cpp}{code/DP/MonotoneQueueOpt.cpp}
 {aeren}
 
@@ -151,7 +151,7 @@ find\_by\_order(K) : ordered\_set 에서 (K+1)번째 원소가 있는 iterator �
 
 
 \Algorithm{Aliens Trick}
-{}{}
+{}{$O(N^2 \log |W|)$}
 {cpp}{code/DP/Aliens2.cpp}
 {JusticeHui}
 
@@ -166,6 +166,11 @@ find\_by\_order(K) : ordered\_set 에서 (K+1)번째 원소가 있는 iterator �
 {cpp}{code/Graph1/Kruskal.cpp}
 {JusticeHui}
 \inputminted[]{py}{code/Graph1/dsu.py}
+
+\Algorithm{Euler Tour}
+{}{}
+{cpp}{code/Graph2/EulerTour.cpp}
+{JusticeHui}
 
 \Algorithm{SCC - Kosaraju}
 {}{$O(V+E)$}
@@ -199,6 +204,19 @@ find\_by\_order(K) : ordered\_set 에서 (K+1)번째 원소가 있는 iterator �
 
 \subsection{플로우 관련 정리}
 \input{code/Graph2/flow}
+
+\TeamnoteImport{$O(V^3)$ Hungarian Method}
+{code/Graph2/Hungarian.cpp} %{e-maxx.ru}
+
+\Algorithm{$O(V^3)$ General Matching}
+{}{}
+{cpp}{code/Graph2/GeneralMatching.cpp}
+{JusticeHui}
+
+\Algorithm{$O(V^3)$ Weighted General Matching}
+{}{}
+{cpp}{code/Graph2/WeightedMatchingShort.cpp}
+{}
 
 \Algorithm{안정 결혼 문제}
 {안정적인 매칭은 다음 조건을 만족한다.\\
@@ -235,8 +253,10 @@ find\_by\_order(K) : ordered\_set 에서 (K+1)번째 원소가 있는 iterator �
 %\Algorithm{Binary GCD, Extend GCD, CRT, Combination}{}{}{cpp}{code/Math/BasicMath.cpp}{JusticeHui}
 
 %\Algorithm{Diophantine}{}{}{cpp}{code/Math/Diophantine.cpp}{Aeren}
-
-
+\Algorithm{Power Tower}
+{}{}
+{cpp}{code/Math/PowerTower.cpp}
+{}
 
 \Algorithm{Harmonic Lemma}
 {$\sum_{i=1}^n \lfloor\frac{n}{i}\rfloor$}{$O(\sqrt n)$}
@@ -267,10 +287,21 @@ find\_by\_order(K) : ordered\_set 에서 (K+1)번째 원소가 있는 iterator �
 {cpp}{code/Math/ChineseRemainderTheorem.cpp}
 {JusticeHui}
 
+\Algorithm{Diophantine}
+{}{}
+{cpp}{code/Math/Diophantine.cpp}
+{Aeren}
+
 \Algorithm{Miller Rabin + Pollard Rho}
 {}{}
 {py}{code/Math/MillerRabin-PollardRho.py}
 {}
+
+\TeamnoteImport{원시근, 이산로그, 이산제곱근}
+{code/Math/DiscreteLogSqrt.cpp}
+
+\TeamnoteImport{$O(N^3 \log 1/\epsilon)$ Polynomial Equation}
+{code/Math/PolyRoot.cpp}
 
 \Algorithm{가우스 소거법 - RREF, 랭크, 행렬식, 역행렬}
 {}{$O(N^3)$}
@@ -440,6 +471,11 @@ find\_by\_order(K) : ordered\_set 에서 (K+1)번째 원소가 있는 iterator �
 \Algorithm{$O(N^2 \log N)$ Bulldozer Trick(Rotating Sweep Line Technique)}
 {서로 다른 정렬의 결과가 $O(N^2)$가지임을 보이고, 가능한 모든 정렬 결과를 $O(N^2\log N)$에 순회하는 테크닉}{}
 {cpp}{code/Geometry/Bulldozer.cpp}
+{JusticeHui}
+
+\Algorithm{$O(N)$ 최소 외접원}
+{}{}
+{cpp}{code/Geometry/EnclosingCircle.cpp}
 {JusticeHui}
 
 
