@@ -1,0 +1,487 @@
+% twocolumn
+% \documentclass[landscape, 8pt, a4paper, oneside, twocolumn]{extarticle}
+
+\documentclass[landscape, 8pt, a4paper, oneside]{extarticle}
+\usepackage{kotex}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{import}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{titlesec}
+
+\usepackage{teamnote}
+
+\teamnote{University of Seoul}{GeongongiIsMae}{Junseo Park, Jimin Kim, Mingi Jeong}{2025 ICPC Seoul Regional (BEXCO, Busan)}
+
+% smaller section title
+% \titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+\ShowUsage
+\ShowComplexity
+\HideAuthor
+
+\begin{document}
+
+\begin{multicols*}{3}
+
+\maketitlepage
+
+% break column
+% \vfill\null\columnbreak
+
+% Make Pagebreak if you want.
+% \pagebreak
+
+\section{정렬/이분 탐색 관련}
+
+\Algorithm{정렬 비교 함수 구현}{}{}{cpp}{code/Sorting/Compare.cpp}{JusticeHui}
+\Algorithm{좌표 압축}{}{}{cpp}{code/Sorting/CoordCompress.cpp}{JusticeHui}
+\Algorithm{이분 탐색 관련 STL}{}{}{cpp}{code/Sorting/STL.cpp}{JusticeHui}
+
+
+\section{자료구조}
+
+\TeamnoteImport{Erasable Priority Queue}{code/DataStructure/ErasablePQ.cpp}
+
+\Algorithm{펜윅 트리(BIT)}
+{}{$O(\log N)$}
+{py}{code/DataStructure/Fenwick.py}{}
+
+\Algorithm{세그먼트 트리}
+{}{$O(\log N)$}
+{cpp}{code/DataStructure/SegmentTree.cpp}
+{https://youtu.be/Afr0yvd-8bA?si=ToKEZa9FLnN-h8py}
+
+\Algorithm{세그먼트 트리 + 레이지 프로퍼게이션}
+{}{$O(\log N)$}
+{cpp}{code/DataStructure/SegmentTreeLazy.cpp}
+{JusticeHui}
+
+\Algorithm{퍼시스턴트 세그먼트 트리}
+{call init(root[0], s, e) before use}{}
+{cpp}{code/DataStructure/PersistentSegmentTree.cpp}
+{JusticeHui}
+
+\Algorithm{화성 지도 세그}
+{}{}
+{cpp}{code/DataStructure/0-1Seg.cpp}
+{}
+
+\Algorithm{금광 세그(최대 부분합 세그)}
+{}{}
+{cpp}{code/DataStructure/GoldMineSeg.cpp}
+{}
+
+\Algorithm{머지 소트 트리}
+{}{$O((\log N)^2)$}
+{cpp}{code/DataStructure/MergeSortTree.cpp}
+{kks227}
+
+\Algorithm{단조 큐(Monotone Queue)}
+{수열을 순회하면서 구간에 대해 최솟값을 찾는다.}{$O(N))$}
+{py}{code/DataStructure/MonotoneQueue.py}{}
+
+\TeamnoteImport{Convex Hull Trick (Stack, LineContainer)}
+{code/DataStructure/ConvexHullTrick.cpp}
+
+% 240212
+% \TeamnoteImport{Bipartite Union Find}{code/DataStructure/BipartiteUF.cpp}
+
+%\TeamnoteImport{Color Processor}{code/DataStructure/ColorProcessor.cpp}
+
+% 240212
+
+%\TeamnoteImport{Kinetic Segment Tree}{code/DataStructure/KineticSegmentTree.cpp}
+
+%\TeamnoteImport{Lazy LiChao Tree}{code/DataStructure/LazyLiChaoTree.cpp}
+
+%\TeamnoteImport{Splay Tree, Link-Cut Tree}{code/DataStructure/Splay-LCT.cpp}
+
+\section{DP}
+
+\Algorithm{$O(N \log N)$ LIS}{}{}{py}{code/DP/LIS.py}{}
+
+\Algorithm{Berlekamp-Massey, 키타마사법}
+{}{Berlekamp-Massey: $O(NK + \log mod)$\\키타마사법: $O(K^2 \log N)$}
+{py}{code/DP/berlekamp_massey.py}
+{https://gist.github.com/koosaga/d4afc4434dbaa348d5bef0d60ac36aa4}
+
+\Algorithm{SOS(Sum Over Subsets) DP}{}{$O(2^N\times N)$}{cpp}{code/DP/SOSDP.cpp}{}
+
+\Algorithm{$O(N \times \max W)$ Subset Sum (Fast Knapsack)}
+{}{}
+{cpp}{code/DP/FastKnapsack.cpp}
+{kactl}
+
+\Algorithm{DP Optimization}
+{}{}
+{cpp}{code/DP/DP-Optimize.cpp}
+{JusticeHui}
+
+\Algorithm{Monotone Queue Optimization}
+{}{}
+{cpp}{code/DP/MonotoneQueueOpt.cpp}
+{aeren}
+
+\Algorithm{Slope Trick}
+{}{}
+{cpp}{code/DP/SlopeTrick.cpp}
+{0xC0DEF}
+
+
+\Algorithm{Aliens Trick}
+{}{}
+{cpp}{code/DP/Aliens2.cpp}
+{JusticeHui}
+
+\section{그래프}
+
+\Algorithm{최단 거리 - Floyd Warshall}{}{$O(V^3)$}{cpp}{code/Graph1/Floyd.cpp}{JusticeHui}
+\Algorithm{최단 거리 - Dijkstra}{}{$O(E\log E)$}{cpp}{code/Graph1/Dijkstra.cpp}{JusticeHui}
+\Algorithm{최단 거리 - Bellman Ford}{}{$O(VE)$}{cpp}{code/Graph1/Bellman.cpp}{JusticeHui}
+
+\Algorithm{유니온 파인드}
+{}{$O(log N)$}
+{py}{code/Graph1/dsu.py}
+{}
+
+\Algorithm{SCC - Kosaraju}
+{}{$O(V+E)$}
+{cpp}{code/Graph2/SCC.cpp}
+{JusticeHui}
+
+\Algorithm{BCC - Tarjan}
+{}{$O(V+E)$}
+{cpp}{code/Graph2/BCC.cpp}
+{JusticeHui}
+
+\Algorithm{최대 유량 - Dinic}
+{}{$O(V^2E)$, 모든 간선의 용량이 1이면 $O(\min(V^{2/3},E^{1/2})E)$}
+{cpp}{code/Graph2/Dinic.cpp}
+{JusticeHui}
+
+\Algorithm{MCMF}
+{}{}
+{cpp}{code/Graph2/MCMF.cpp}
+{JusticeHui}
+
+\Algorithm{이분 매칭}
+{}{$O(VE)$}
+{py}{code/Graph2/BipartiteMatching.py}
+{}
+
+\Algorithm{이분 매칭 - Hopcroft Karp}
+{}{$O(E \sqrt V)$}
+{cpp}{code/Graph2/Hopcroft.cpp}
+{JusticeHui}
+
+\subsection{플로우 관련 정리}
+\input{code/Graph2/flow}
+
+\Algorithm{안정 결혼 문제}
+{안정적인 매칭은 다음 조건을 만족한다.\\
+각 집합의 원소는 상대 집합의 원소들에 대한 서로 다른 선호도를 가진다.\\
+첫 번째 집합과 두 번째 집합의 원소가 일대일로 매칭되어 있다.\\
+첫 번째 집합에 속한 원소 A, B가 두 번째 집합에 속한 원소 C, D와 각각 매칭되어 있을 때 A가 C보다 D를 선호하면서 D가 B보다 A를 선호하는 경우는 존재하지 않는다.}{$O(V^2)$}
+{py}{code/Graph2/StableMarriage.py}{}
+
+\Algorithm{최소 공통 조상(LCA)}
+{}{전처리 $O(N \log N)$, 쿼리 $O(\log N)$}
+{cpp}{code/Graph2/LCA.cpp}
+{JusticeHui}
+
+\Algorithm{Heavy Light Decomposition}
+{}{전처리 $O(N)$, 쿼리 $O(T(N) \log N)$}
+{cpp}{code/Graph2/HLD.cpp}
+{JusticeHui}
+
+\Algorithm{센트로이드 트리}
+{}{}
+{cpp}{code/Graph2/CentroidTree.cpp}
+{mym0404}
+
+\section{수학}
+
+\subsection{바닥함수, 천장함수}
+\input{code/Math/floor}
+
+\Algorithm{빠른 거듭제곱}
+{$a^b \pmod c$를 구하는 함수}{$O(\log b)$}
+{py}{code/Math/PowMod.py}
+{}
+
+%\Algorithm{Binary GCD, Extend GCD, CRT, Combination}{}{}{cpp}{code/Math/BasicMath.cpp}{JusticeHui}
+
+%\Algorithm{Diophantine}{}{}{cpp}{code/Math/Diophantine.cpp}{Aeren}
+
+
+
+\Algorithm{Harmonic Lemma}
+{$\sum_{i=1}^n \lfloor\frac{n}{i}\rfloor$}{$O(\sqrt n)$}
+{py}{code/Math/HarmonicLemma.py}
+{}
+
+\TeamnoteImport{FloorSum}
+{code/Math/FloorSum.cpp}
+
+%\Algorithm{XOR Basis (XOR Maximization)}{}{}{cpp}{code/Math/xor-basis.cpp}{Aeren}
+
+%\Algorithm{Stern Brocot Tree}{}{}{cpp}{code/Math/SternBrocotTree.cpp}{myungwoo}
+
+%\TeamnoteImport{$O(N^3 \log 1/\epsilon)$ Polynomial Equation}{code/Math/PolyRoot.cpp}
+
+\Algorithm{Linear Sieve}
+{}{}
+{cpp}{code/Math/LinearSieve.cpp}
+{ahgus89}
+
+\Algorithm{확장 유클리드 알고리즘}
+{}{$O(\log \max(a,b))$}
+{cpp}{code/Math/ExtendedEuclidean.cpp}
+{JusticeHui}
+
+\Algorithm{중국인의 나머지 정리}
+{}{$O(k \log m)$}
+{cpp}{code/Math/ChineseRemainderTheorem.cpp}
+{JusticeHui}
+
+\Algorithm{Miller Rabin + Pollard Rho}
+{}{}
+{py}{code/Math/MillerRabin-PollardRho.py}
+{}
+
+\Algorithm{가우스 소거법 - RREF, 랭크, 행렬식, 역행렬}
+{}{$O(N^3)$}
+{cpp}{code/Math/Matrix.cpp}
+{JusticeHui}
+
+\Algorithm{다항식 곱셈(FFT)}
+{}{$O(N \log N)$}
+{cpp}{code/Math/Convolution.cpp}
+{JusticeHui}
+
+\Algorithm{이항 계수를 소수로 나눈 나머지(Lucas' theorem)}
+{}{전처리 $O(P)$, 쿼리 $O(\log P)$}
+{cpp}{code/Math/LucasTheorem.cpp}
+{JusticeHui}
+
+\subsection{이항 계수 관련 공식}
+\input{code/Math/binomial}
+
+\Algorithm{Partition Number}
+{}{$O(N\sqrt N)$}{cpp}{code/Math/PartitionNumber.cpp}{Aeren}
+
+%\TeamnoteImport{Primitive Root, Discrete Log/Sqrt}{code/Math/DiscreteLogSqrt.cpp}
+
+%\Algorithm{Power Tower}{}{}{cpp}{code/Math/PowerTower.cpp}{}
+
+%\Algorithm{De Bruijn Sequence}{}{}{cpp}{code/Math/DeBruijnSequence.cpp}{DeobureoMinkyuParty}
+
+%\Algorithm{Simplex / LP Duality}{}{}{cpp}{code/Math/Simplex.cpp}{molamola}
+
+%\noindent \input{code/Math/SimplexExample}
+
+%\TeamnoteImport{Polynomial \& Convolution}{code/Math/Convolution.cpp}
+
+%\Algorithm{Matroid Intersection}{}{}{cpp}{code/Math/MatroidIntersection.cpp}{Aeren}
+
+\section{문자열}
+
+\Algorithm{문자열 해싱}
+{}{build: $O(N)$, get: $O(1)$}
+{cpp}{code/String/Hashing.cpp}
+{JusticeHui}
+
+\Algorithm{문자열 매칭 - KMP}
+{}{GetFail: $O(\vert P\vert)$, $O(\vert S\vert + \vert P\vert)$}
+{cpp}{code/String/KMP.cpp}
+{JusticeHui}
+
+\Algorithm{가장 긴 팰린드롬 부분 분자열 - Manacher}
+{}{$O(N)$}
+{cpp}{code/String/Manacher.cpp}
+{JusticeHui}
+
+\Algorithm{문자열 매칭 - Z}
+{}{$O(N)$}
+{cpp}{code/String/Z.cpp}
+{JusticeHui}
+
+\Algorithm{Aho-Corasick}
+{}{}
+{cpp}{code/String/AhoCorasick.cpp}
+{edenooo}
+
+\Algorithm{접미사 배열}
+{}{$O(N \log N)$}
+{cpp}{code/String/SuffixArray.cpp}
+{JusticeHui}
+
+%\Algorithm{$O(N \log N)$ SA + LCP}{}{}{cpp}{code/String/SA-LCP.cpp}{jhnah917}
+
+% \TeamnoteImport{$O(N \log N)$ Tandem Repeats}{code/String/TandemRepeat.cpp}
+
+% \Algorithm{Suffix Automaton}{}{}{cpp}{code/String/SuffixAutomaton.cpp}{aeren}
+
+% \Algorithm{Bitset LCS}{}{}{cpp}{code/String/BitsetLCS.cpp}
+
+\TeamnoteImport{All LCS}
+{code/String/AllLCS.cpp}
+
+\section{계산 기하}
+\Algorithm{2차원 계산 기하 템플릿 + CCW}
+{}{}
+{cpp}{code/Geometry/Template.cpp}
+{JusticeHui}
+
+\Algorithm{360도 각도 정렬}
+{}{}
+{cpp}{code/Geometry/PolarSort.cpp}
+{JusticeHui}
+
+\Algorithm{다각형 넓이}
+{}{}
+{cpp}{code/Geometry/PolygonArea.cpp}
+{JusticeHui}
+
+\Algorithm{선분 교차 판정}
+{}{}
+{cpp}{code/Geometry/SegmentIntersection.cpp}
+{JusticeHui}
+
+\Algorithm{Intersect Series}
+{}{}
+{cpp}{code/Geometry/Intersect.cpp}
+{JusticeHui, kactl}
+
+\Algorithm{Segment Distance, Segment Reflect}
+{}{}
+{cpp}{code/Geometry/Segment.cpp}
+{JusticeHui}
+
+\Algorithm{다각형 내부 판별}
+{}{}
+{cpp}{code/Geometry/PointInPolygon.cpp}
+{JusticeHui}
+
+\Algorithm{볼록 껍질 - Graham Scan}
+{}{}
+{cpp}{code/Geometry/ConvexHull.cpp}
+{JusticeHui}
+
+\Algorithm{가장 먼 두 점 - Rotating Calipers}
+{}{}
+{cpp}{code/Geometry/Calipers.cpp}
+{JusticeHui}
+
+\Algorithm{볼록 다각형 내부 판별}
+{}{}
+{cpp}{code/Geometry/PointInConvexPolygon.cpp}
+{JusticeHui}
+
+\TeamnoteImport{Segment In Polygon}
+{code/Geometry/SegmentInPolygon.cpp}
+
+\Algorithm{Polygon Cut, Center, Union}
+{}{}
+{cpp}{code/Geometry/Polygon.cpp}
+{aeren, kactl}
+
+\TeamnoteImport{Polycon Raycast}
+{code/Geometry/PolygonRaycast.cpp}
+
+\Algorithm{$O(N \log N)$ Shamos-Hoey}
+{n개의 선분 중 서로 교차하는 선분 쌍이 존재하는지 여부를 O(nlogn)에 판별}{}
+{cpp}{code/Geometry/ShamosHoey.cpp}
+{qwerasdfzxcl}
+
+\Algorithm{$O(N \log N)$ 반평면 교집합}
+{}{}
+{cpp}{code/Geometry/HPI.cpp}
+{DeobureoMinkyuParty & JusticeHui}
+
+
+\Algorithm{$O(N^2 \log N)$ Bulldozer Trick(Rotating Sweep Line Technique)}
+{서로 다른 정렬의 결과가 $O(N^2)$가지임을 보이고, 가능한 모든 정렬 결과를 $O(N^2\log N)$에 순회하는 테크닉}{}
+{cpp}{code/Geometry/Bulldozer.cpp}
+{JusticeHui}
+
+
+\section{Misc}
+
+\Algorithm{삼분 탐색}
+{}{}
+{cpp}{code/Misc/TernarySearch.cpp}
+{JusticeHui}
+
+\Algorithm{Mo's Algorithm}
+{}{$O((N+Q)\sqrt N)$}
+{cpp}{code/Misc/Mos.cpp}
+{JusticeHui}
+
+\Algorithm{C++ 랜덤, GCC 확장, 비트마스킹 트릭}
+{}{}
+{cpp}{code/Misc/Cpp-Grammer.cpp}
+{JusticeHui}
+
+\Algorithm{Floating Point Add (Kahan)}{}{}{cpp}{code/Misc/FloatingPointAdd.cpp}{JusticeHui}
+
+\Algorithm{Fast I/O, Fast Div, Fast Mod}
+{}{}
+{cpp}{code/Misc/Constant-Optimize.cpp}
+{JusticeHui}
+
+\Algorithm{Python Decimal}
+{}{}
+{py}{code/Misc/PythonDecimal.py}
+{https://github.com/tzupengwang/PECaveros/blob/master/codebook/basic/python_trick.py}
+
+\section{Notes}
+\subsection{구간별 약수 최대 개수, 최대 소수} % koosaga
+\input{code/Notes/Primes}
+
+\subsection{비트 연산}
+\input{code/Notes/bitwise}
+
+\subsection{Triangles/Trigonometry} % from Ryute Teamnote
+\input{code/Notes/Triangle}
+
+\subsection{Calculus, Newton's Method}
+\input{code/Notes/Calculus}
+
+\subsection{Zeta/Mobius Transform}
+\input{code/Notes/ZetaMobius}
+
+\subsection{Generating Function}
+\input{code/Notes/GeneratingFunction}
+
+\subsection{Counting}
+\input{code/Notes/Counting}
+
+\subsection{Faulhaber's Formula ($\sum_{k=1}^{n} k^c$)}
+\input{code/Notes/Faulhaber}
+
+\subsection{About Graph Degree Sequence}
+\input{code/Notes/DegreeSequence}
+
+\subsection{Burnside, Grundy, Pick, Hall, Simpson, Area of Quadrangle, Fermat Point, Euler, Pythagorean}
+\input{code/Notes/Theorems}
+
+\subsection{About Graph Minimum Cut}
+\input{code/Notes/MinCut}
+
+\subsection{Matrix with Graph(Kirchhoff, Tutte, LGV)}
+\input{code/Notes/GraphMatrix}
+
+\subsection{About Graph Matching(Graph with $\vert V \vert \leq 500$)}\input{code/Notes/Matching}
+
+\subsection{Checklist}
+\input{code/Notes/Checklist}
+
+\end{multicols*}
+
+\end{document}
